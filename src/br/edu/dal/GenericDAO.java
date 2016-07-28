@@ -12,7 +12,7 @@ public interface GenericDAO<T> {
 	
 	T find(int id);
 	
-	List<T> find();
+	List<T> findAll();
 	
 	T findByCpf(String cpf);
 	

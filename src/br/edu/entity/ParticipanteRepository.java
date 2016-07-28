@@ -1,33 +1,35 @@
 package br.edu.entity;
 
+import java.util.List;
+
 import br.edu.dal.GenericDAO;
 import br.edu.dal.GenericJPADAO;
 
 public class ParticipanteRepository {
 	private GenericDAO<Participante> dao;
 	
-	private ParticipanteRepository(){
+	public ParticipanteRepository(){
 		this.dao = new GenericJPADAO<>(Participante.class);
 	}
 	
-	private void save(Participante p){
+	public void save(Participante p){
 		dao.save(p);
 	}
 	
-	private void delete(Participante p){
+	public void delete(Participante p){
 		dao.delete(p.getId());
 	}
 	
-	private void find(int id){
-		dao.find(id);
+	public Participante find(int id){
+		return dao.find(id);
 	}
 	
-	private void find(){
-		dao.find();
+	public List<Participante> findAll(){
+		return dao.findAll();
 	}
 	
-	private void findByCpf(Participante p){
-		dao.findByCpf(p.getCpf());
+	public Participante findByCpf(String cpf){
+		return dao.findByCpf(cpf);
 	}
 
 }

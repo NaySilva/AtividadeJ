@@ -43,7 +43,7 @@ public class GenericJPADAO<T> implements GenericDAO<T>{
 	}
 
 	@Override
-	public List<T> find() {
+	public List<T> findAll() {
 		Query query = em.createQuery("from Participante as p");
 		List<T> lista = query.getResultList();
 		return lista;
